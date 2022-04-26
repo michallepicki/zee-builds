@@ -31,14 +31,9 @@ jobs:
       with:
         key: v2
 
-#     - uses: actions-rs/cargo@v1
-#       with:
-#         command: build
-#         args: --release
-
     - run: cargo build --all-features --release
       
     - uses: actions/upload-artifact@v3.0.0
       with:
         name: zee
-        path: target/release/zee
+        path: target/x86_64-unknown-linux-musl/release/zee
