@@ -23,8 +23,13 @@ jobs:
     - uses: actions/checkout@v3
       with:
         repository: zee-editor/zee
-    
-    - run: cargo build --all-targets --all-features --release
+
+    - name: Handle Rust dependencies caching
+      uses: Swatinem/rust-cache@v1
+      with:
+        key: v1
+
+    - run: cargo build --all-features --release
       
     - uses: actions/upload-artifact@v3.0.0
       with:
