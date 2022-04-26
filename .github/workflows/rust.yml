@@ -14,6 +14,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    container: clux/muslrust:stable
 
     steps:
 
@@ -23,9 +24,17 @@ jobs:
       with:
         repository: zee-editor/zee
 
+    - run: ln -s /root/.cargo $HOME/.cargo
+    - run: ln -s /root/.rustup $HOME/.rustup
+    
     - uses: Swatinem/rust-cache@v1
       with:
-        key: v1
+        key: v2
+
+#     - uses: actions-rs/cargo@v1
+#       with:
+#         command: build
+#         args: --release
 
     - run: cargo build --all-features --release
       
