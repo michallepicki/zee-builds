@@ -17,15 +17,13 @@ jobs:
 
     steps:
 
-    - name: Install x11 deps
-      run: sudo apt update && sudo apt install xorg-dev libxcb-shape0-dev libxcb-xfixes0-dev
+    - run: sudo apt install xorg-dev libxcb-shape0-dev libxcb-xfixes0-dev
 
     - uses: actions/checkout@v3
       with:
         repository: zee-editor/zee
 
-    - name: Handle Rust dependencies caching
-      uses: Swatinem/rust-cache@v1
+    - uses: Swatinem/rust-cache@v1
       with:
         key: v1
 
