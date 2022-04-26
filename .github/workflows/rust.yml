@@ -18,7 +18,7 @@ jobs:
 
     steps:
 
-    - run: sudo apt install xorg-dev libxcb-shape0-dev libxcb-xfixes0-dev
+    - run: apt install xorg-dev libxcb-shape0-dev libxcb-xfixes0-dev
 
     - uses: actions/checkout@v3
       with:
